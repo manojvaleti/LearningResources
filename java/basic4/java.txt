@@ -1,0 +1,145 @@
+java conains array lists
+
+Arraylist:
+	add(Object elem)
+		adds the object parameter to the list
+	remove(int index)
+		Removes the object at the index parameter
+	remove(Object elem)
+		Removes this object (if it's in the array list)
+	contains(Object elem)
+		Retruns "true" if there's a match for the object parameter
+	isEmpty()
+		Returns "true" if the list has no Elements
+	indexOf(Object elem)
+		Returns either the index of object parameter or -1
+	size()
+		Returns the number of elements in the list
+	get(int index)
+		Returns the object currently at that index
+	
+
+Array list is different from array in many ascepts 
+
+in arrays if we remove an object it's not getting deleted but reference to it is set to null
+but in arraylists the entire object is delted
+
+arraylist.remove(obj)
+
+array[i] = null;
+
+
+
+
+
+
+-------------------------------------------------------------------------------
+Inheritance                         |
+-------------------------------------------------------------------------------
+
+
+
+Say you have many classes which have many methods or few methods in common then instead of writing the code for those methods in all the classes we can just group the common methods into a single class and we can inherit those properties of classes into these methods when required
+
+the inherited class is called the super class and the classes which inherit those are called the sub classes of the super class.
+
+
+
+
+
+when one class inherits from another class we say that the subclass extends superclass
+
+when we want to know if one thing should extend another apply IS-A test
+
+if for two types a and b if IS-A test doesn't make sense in either ways but there is a relation between the type a and b then we try if HAS-A test satisfies the relation between the two types. If it does then we say that one of those will be an instance vartiable in class of the other
+
+Eg: IS-A test doesn't fit between BATHROOM and TUB either ways
+but BATHROOM HAS A TUB makes sense. So we can say that in a class called BATHROOM TUB is an instance variable.
+
+  
+-------------------------------------------------------------------------------
+POLYMORPHISM
+
+
+with polymorphism the reference type can be a superclass of the actual object.
+
+
+for a function if the arguments are superclass then our function works for all the subclasses that gets added later with time.
+
+
+we cann't have a subclass in three case
+	a)if the class is not declared public that is non-public then we can only inherit from that class in the same package. Classes in different packages can't inherit these class properties
+	
+	b)If the class is declared as final then it means that inheritance gets end with that class
+
+	c)If class has only private constructors.
+	
+
+
+Generally classes are made "FINAL" so that the methods written in that class will not be changed by anybody.
+	
+specific method can also be made final without the class being made final.
+
+
+
+OVERRIDING: changing of the functionalities of the methods that are inherited from a particular class.
+
+when you oveeride the method the arguments type and returnvalue type must not be changed.
+
+
+
+overloading:
+	this is nothing but having same function name for more than one function with different arguments.
+	there is no polymorphism involved here.
+
+
+a function with same arguments and different return types is not said to be overridden.
+
+
+
+abstract class:
+----------------------------------------
+
+An abstract class means noone will be able to make an instance of that class.
+but you can still use that abstract class an a declared reference type for the purporse of polymorphism.
+
+
+abstract class has virtually no use no value no purpose in life unless it is extended.
+
+
+an abstract class ===== it must be extended
+an abstract method ==== it must be overridden
+
+we can't have an abstract method in non abstract class
+
+
+implementing an abstract method is like just overriding the method
+
+
+
+every class in java is a subcalss of Object.without knowing we have made everything subclaa of the object.
+
+So any class that doesn't explicitly exteend another class ,implicitly extends Object.
+
+
+In java there is no multiple inheritance.
+because of multiple inheritance deadly diamond problem occurs;
+
+DEADLY DIAMOND PROBLEM.
+suppose class A is a subclass of class B and class C and if both these classes have same functionname then when class A is trying to inherit that property it gets confused. As a result the compiler will not know which method to take and it generates a compile error.
+
+	
+As java had no concept of multiple inheritance.. the concept of interface can b eused to solve the problem of multiple inheriatance.
+
+
+
+--------------------------------------------------------------------------------INTERFACE
+--------------------------------------------------------------------------------
+
+
+1)to define an interface
+	public interface pet{ .....}
+
+2) to implement an interface
+	public class dog extends animal implements pet{...}
+	
